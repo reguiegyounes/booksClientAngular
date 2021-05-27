@@ -1,0 +1,20 @@
+<div class="container">
+    <table  class="table">
+        <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Number of Pages</th>
+            <th scope="col">Published Date</th>
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let book of sBooks.books">
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.numberOfPage}}</td>
+                <td>{{book.publishedAt}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
