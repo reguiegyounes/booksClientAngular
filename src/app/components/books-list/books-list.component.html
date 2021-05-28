@@ -1,5 +1,5 @@
 <div class="container">
-    <table  class="table">
+    <table  class="table table-hover">
         <thead>
             <th scope="col">ID</th>
             <th scope="col">Title</th>
@@ -8,7 +8,7 @@
             <th scope="col">Published Date</th>
         </thead>
         <tbody>
-            <tr scope="row" *ngFor="let book of sBooks.books">
+            <tr scope="row" *ngFor="let book of sBooks.books" (click)="fillData(book)" style="cursor: pointer;">
                 <td>{{book.id}}</td>
                 <td>{{book.title}}</td>
                 <td>{{book.author}}</td>

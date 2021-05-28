@@ -23,14 +23,29 @@ export class BookFormComponent implements OnInit {
   }
 
   submit(){
-    this.bookService.postBook().subscribe(
-      res=>{
-        this.bookService.getAllbooks();
-      },
-      err=>{
-        console.log('error post[Book]')
-      }
-    );
+    if(this.bookService.book.id==0){
+      this.bookService.postBook().subscribe(
+        res=>{
+          this.bookService.getAllbooks();
+        },
+        err=>{
+          console.log('error post[Book]')
+        }
+      );
+    }
+    else{
+      this.bookService.putBook().subscribe(
+        res=>{
+          this.bookService.getAllbooks();
+        },
+        err=>{
+          console.log('error post[Book]')
+        }
+      );
+    }
+
+
+    
   }
 
 }

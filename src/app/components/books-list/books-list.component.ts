@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from 'src/app/models/book.model';
 import { BookService } from 'src/app/services/book.service';
 
 @Component({
@@ -14,4 +15,11 @@ export class BooksListComponent implements OnInit {
     this.sBooks.getAllbooks();
   }
   
+  fillData(book:Book){
+    this.sBooks.book.id=book.id;
+    this.sBooks.book.title=book.title;
+    this.sBooks.book.author=book.author;
+    this.sBooks.book.numberOfPage=book.numberOfPage;
+    this.sBooks.book.publishedAt=book.publishedAt;
+  }
 }

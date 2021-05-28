@@ -24,5 +24,10 @@ export class BookService {
     return this.http.post(this.url,this.book)
   }
 
+  putBook(){
+    console.log(this.book);
+    return this.http.put(this.url+"/"+this.book.id,this.book)
+  }
+
 
 }
