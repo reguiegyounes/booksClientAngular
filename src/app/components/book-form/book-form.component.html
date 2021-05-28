@@ -1,0 +1,19 @@
+<form ngForm="form" (submit)="submit()">
+    <div class="mb-3">
+        <label for="title">Title : </label>
+        <input type="text" name="title" [(ngModel)]="bookService.book.title" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="author">Author : </label>
+        <input type="text" name="author" [(ngModel)]="bookService.book.author" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="numberOfPage">Nunmber of Page : </label>
+        <input type="text" name="numberOfPage" [(ngModel)]="bookService.book.numberOfPage" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="publishedAt">Published At : </label>
+        <input name="publishedAt" [(ngModel)]="bookService.book.publishedAt" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

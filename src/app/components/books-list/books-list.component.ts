@@ -13,5 +13,5 @@ export class BooksListComponent implements OnInit {
   ngOnInit(): void {
     this.sBooks.getAllbooks();
   }
-
+  
 }
