@@ -28,6 +28,10 @@ export class BookService {
     console.log(this.book);
     return this.http.put(this.url+"/"+this.book.id,this.book)
   }
+  deleteBook(id:number){
+    console.log(this.book);
+    return this.http.delete(this.url+"/"+id);
+  }
 
 
 }

@@ -9,17 +9,26 @@ import { BookService } from 'src/app/services/book.service';
 })
 export class BooksListComponent implements OnInit {
 
-  constructor(public sBooks:BookService) { }
+  constructor(public bookService:BookService) { }
 
   ngOnInit(): void {
-    this.sBooks.getAllbooks();
+    this.bookService.getAllbooks();
   }
   
   fillData(book:Book){
-    this.sBooks.book.id=book.id;
-    this.sBooks.book.title=book.title;
-    this.sBooks.book.author=book.author;
-    this.sBooks.book.numberOfPage=book.numberOfPage;
-    this.sBooks.book.publishedAt=book.publishedAt;
+    this.bookService.book.id=book.id;
+    this.bookService.book.title=book.title;
+    this.bookService.book.author=book.author;
+    this.bookService.book.numberOfPage=book.numberOfPage;
+    this.bookService.book.publishedAt=book.publishedAt;
+  }
+  delete(id:number){
+    this.bookService.deleteBook(id).subscribe(
+      res=>{
+        this.bookService.getAllbooks();
+      },
+      err=>{
+        console.log('error delete[Book]')
+      });
   }
 }

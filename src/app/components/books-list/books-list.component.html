@@ -6,14 +6,16 @@
             <th scope="col">Author</th>
             <th scope="col">Number of Pages</th>
             <th scope="col">Published Date</th>
+            <th></th>
         </thead>
         <tbody>
-            <tr scope="row" *ngFor="let book of sBooks.books" (click)="fillData(book)" style="cursor: pointer;">
+            <tr scope="row" *ngFor="let book of bookService.books" (click)="fillData(book)" style="cursor: pointer;">
                 <td>{{book.id}}</td>
                 <td>{{book.title}}</td>
                 <td>{{book.author}}</td>
                 <td>{{book.numberOfPage}}</td>
                 <td>{{book.publishedAt}}</td>
+                <td><span class="btn btn-danger" (click)="delete(book.id)">Delete</span></td>
             </tr>
         </tbody>
     </table>
